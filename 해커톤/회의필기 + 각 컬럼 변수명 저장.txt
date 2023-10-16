@@ -1,0 +1,152 @@
+광, 이산화탄소, 양액 중 가장 영향을 받는게 양액
+ -> ph랑 ec로 나눠짐 / 5.5선만 계속 유지하면 됨 / ph는 단순하게 고정하는 값임(스마트농업 기술 중)
+ec는 변동성이 있음 / 높낮이를 조절해서 수확량을 증가시키겠다. 대부분은 조절을 잘 못한다
+
+우리가 초점 맞춘건 급액량만 맞추면 됨
+
+
+10번째항목
+
+종속변수 : 열매
+
+꽃의 수
+
+
+1. 모두 0
+    daysuplyqy  일 급액량
+    lefstalklt  엽병장(잇몸부분을 유지하는 자루 길이)
+    frtstSetCo  착과 수
+    pllnLt      초장
+    flanJnt     개화된 마디
+    hvstJnt     수확 마디
+    flwrCo      꽃의 수
+    frtstJnt    착과된 마디
+2. 거의 0
+    tcdmt     관부 직경 - 83400
+    CO2Usage  CO2사용량(L) - 83700
+    CO2Cost   CO2사용비용(원) - 83700
+
+
+
+
+- 입력  
+ec 급액 EC 
+cunt 일급액횟수
+daysuplyqy 일급액량(CC/1주수)
+HeatingEnergyUsage_cumsum 누적 난방 에너지 사용량
+
+
+- 출력 
+flwrCo 꽃개수
+frtstSetCo 착과수
+hvstCo 수확수 
+frtstCo 열매수
+
+- 원하는 예측값
+outtrn_cumsum	누적 생산량
+
+
+컴퓨터공학 학사, C++/JAVA/Python 5년
+
+
+
+랜덤 포레스트와 그라디언트 부스팅 모델에서 사용되는 주요 하이퍼파라미터들은 다음과 같습니다. 이 하이퍼파라미터들을 조정하여 모델의 성능을 향상시킬 수 있습니다.
+
+
+랜덤 포레스트 하이퍼파라미터:
+
+n_estimators: 생성할 트리의 개수입니다. 클수록 모델이 복잡해지지만, 과적합 가능성이 증가합니다.
+max_depth: 트리의 최대 깊이를 제한합니다. 과적합을 방지하기 위해 사용됩니다.
+min_samples_split: 노드를 분할하기 위한 최소한의 샘플 개수입니다.
+min_samples_leaf: 리프 노드에 필요한 최소한의 샘플 개수입니다.
+
+
+그라디언트 부스팅 하이퍼파라미터:
+
+n_estimators: 부스팅 단계(iteration)의 개수입니다. 클수록 모델이 복잡해지지만, 과적합 가능성이 증가합니다.
+learning_rate: 각 부스팅 단계의 기여 정도를 조절합니다. 작은 값은 안정적인 학습을 위해 선택됩니다.
+max_depth: 각 트리의 최대 깊이를 제한합니다.
+min_samples_split: 노드를 분할하기 위한 최소한의 샘플 개수입니다.
+min_samples_leaf: 리프 노드에 필요한 최소한의 샘플 개수입니다.
+
+
+앙상블 모델:
+
+앙상블 모델에서는 각 개별 모델의 하이퍼파라미터를 설정하고, VotingRegressor를 통해 이 모델들을 결합합니다. 앙상블 모델 자체의 하이퍼파라미터는 VotingRegressor의 voting 매개변수를 통해 설정됩니다.
+하이퍼파라미터 튜닝을 위해 이러한 파라미터들을 조정하고, 최적의 조합을 찾는 것이 중요합니다. Grid Search, Random Search, Bayesian Optimization과 같은 방법을 사용하여 하이퍼파라미터 튜닝을 수행할 수 있습니다.
+
+
+
+
+금융 및 경제:
+
+금융 시계열 예측: LSTM, GRU, Transformer 기반 모델
+투자 전략: 다양한 퀀트 투자 전략과 알고리즘
+SOTA 모델은 지속적으로 발전하며, 새로운 연구와 기술 발전에 따라 갱신됩니다. 따라서 특정 분야에서의 SOTA 모델은 시간이 지남에 따라 변경될 수 있습니다. 최신 SOTA 모델을 찾고 활용하기 위해서는 해당 분야의 논문, 대회 결과, 연구 커뮤니티 등을 주시하는 것이 중요합니다.
+
+넵
+RMSE: 27664.03178991505
+R2_score: 0.49664076009363455
+
+
+ 누적 일사량
+
+
+컬럼명	데이터 타입	항목명	설명
+frmDist	OBJECT	농가구역	농가구역
+date	INT	날짜	YYYYMMDD
+inTp	FLOAT	내부온도	내부온도 값 (‘C)
+outTp	FLOAT	외부온도	외부온도 값 (‘C)
+inHd	FLOAT	내부습도	내부습도 값 (%)
+inCo2	FLOAT	내부CO2	내부 잔존 CO2 값 (PPM)
+outWs	FLOAT	풍속	풍속(M/S)
+acSlrdQy	FLOAT	누적 일사량	누적 일사량(J/CM2)
+ec	FLOAT	급액 EC	양액 공급 EC 값
+ph	FLOAT	급액 PH	양액 공급 PH 값
+cunt	FLOAT	일 급액횟수	일별 양액 공급횟수
+daysuplyqy	FLOAT	일 급액량(CC/1주수)	1주당 양액 급액량
+otmsuplyqy	FLOAT	1회 급액량(CC/1주수)	1주당 1회 양액 급액량
+frmYear	INT	연도	데이터 측정 연도
+frmWeek	INT	주차	(1년 = 52주차)34주 = 7월 2주차
+FRMMONTH	FLOAT	월	8월
+grwtLt	FLOAT	생장 길이	생장길이 13.5CM
+pllnLt	FLOAT	초장	초장
+lefCunt	FLOAT	옆수	잎의 개수 5개
+lefLt	FLOAT	엽장	엽장
+lefBt	FLOAT	옆폭	잎의 너비 10CM
+lefstalklt	FLOAT	엽병장	잎몸 부분을 유지하는 자루 길이
+tcdmt	FLOAT	관부직경	관부 직경 값
+fcluHg	FLOAT	화방높이	화방높이 10CM
+stemThck	FLOAT	줄기 굵기	줄기굵기 10MM
+frmhsFclu	FLOAT	개화화방	개화화방 값
+flanGrupp	FLOAT	개화군	개화군 수
+frtstGrupp	FLOAT	착과군	착과군 수
+hvstGrupp	FLOAT	수확군	수확군 수
+flanJnt	FLOAT	개화마디	개화된 마디
+frtstJnt	FLOAT	착과마디	착과된 마디
+hvstJnt	FLOAT	수확마디	수확한 마디
+flwrCo	FLOAT	꽃개수	꽃의 수
+frtstSetCo	FLOAT	착과수	착과 수
+hvstCo	FLOAT	수확수	수확 수
+frtstCo	FLOAT	열매수	열매 수
+frmAr	INT	면적	1000 (3.3㎡)
+frmDov	FLOAT	재식밀도	주수/평
+outtrn_cumsum	FLOAT	누적 생산량	10 (KG/3.3㎡)
+WaterUsage	FLOAT	물 사용량	물 사용량(L)
+WaterCost	FLOAT	물 사용 비용	물 사용 비용(원)
+FertilizerUsage	FLOAT	비료 사용량	비료 사용량(L)
+FertilizerCost	FLOAT	비료 사용 비용	비료 사용 비용(원)
+HeatingEnergyUsage_cumsum	FLOAT	누적 난방 에너지 사용량	누적 난방 에너지 사용량(KCAL)
+CO2Usage	FLOAT	CO₂사용량	CO₂사용량(L)
+CO2Cost	FLOAT	CO₂사용비용	CO₂사용비용(원)
+MistUsageTime	FLOAT	미스트 사용시간	미스트 사용시간(분)
+Mist Cost	FLOAT	미스트 사용비용	미스트 사용비용(원)
+
+
+
+
+
+
+
+
+
